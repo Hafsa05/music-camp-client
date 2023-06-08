@@ -2,18 +2,17 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/music_logo.png'
 
 const Navbar = () => {
-	// <div className="font-semibold">
-		const navOptions =  <>
-			<li><Link to='/' className="font-semibold">Home</Link></li>
-			<li><Link to='/' className="font-semibold">Instructor</Link></li>
-			<li><Link to='/blogs' className="font-semibold">Classes</Link></li>
-			<li><Link to='/all-toys' className="font-semibold">Dashboard</Link></li>
-			<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
-				<div className="w-10 rounded-full" >
-					<img src='' />
-				</div>
-			</label>
-			{/* {
+	const navOptions = <>
+		<li><Link to='/' className="font-semibold">Home</Link></li>
+		<li><Link to='/' className="font-semibold">Instructor</Link></li>
+		<li><Link to='/blogs' className="font-semibold">Classes</Link></li>
+		<li><Link to='/all-toys' className="font-semibold">Dashboard</Link></li>
+		<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
+			<div className="w-10 rounded-full" >
+				<img src='' />
+			</div>
+		</label>
+		{/* {
 			user?.email ? <>
 				<li><Link to='/my-toys'>My Toys</Link></li>
 				<li><Link to='/add-toy'>Add Toy</Link></li>
@@ -27,12 +26,11 @@ const Navbar = () => {
 				: <li><Link to='/login'>Login</Link></li>
 		} */}
 
-		</>
-	// </div>
+	</>
 
 	return (
 		<>
-			<div className="navbar fixed h-24 bg-sky-200 w-full">
+			<div className="navbar fixed h-24 z-10 bg-opacity-90 bg-sky-200 w-full">
 
 				<div className="navbar-start">
 					<div className="dropdown">
@@ -46,7 +44,7 @@ const Navbar = () => {
 					<div className="flex ml-20 items-center" >
 						<Link to="/"><img src={logo} alt="page logo" className='rounded-full w-20' /></Link>
 						<div className="ml-5">
-							<h2 className='text-xl font-bold font-serif text-sky-500'><Link to='/'>Disney Dreamland Doll</Link> </h2>
+							<h2 className='text-xl font-bold font-serif text-sky-500'><Link to='/'>Music Camp</Link> </h2>
 							<p><small className='text-sky-500'>Enjoy the rhythm of life with music!</small> </p>
 						</div>
 					</div>
