@@ -3,15 +3,19 @@ import logo from '../../../assets/logo/music_logo.png'
 
 const Navbar = () => {
 	const navOptions = <>
-		<li><Link to='/' className="font-semibold">Home</Link></li>
-		<li><Link to='/' className="font-semibold">Instructor</Link></li>
-		<li><Link to='/blogs' className="font-semibold">Classes</Link></li>
-		<li><Link to='/all-toys' className="font-semibold">Dashboard</Link></li>
-		<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
-			<div className="w-10 rounded-full" >
-				<img src='' />
-			</div>
-		</label>
+		<div className="font-semibold text-xl flex">
+			<li><Link to='/'>Home</Link></li>
+			<li><Link to='/'>Instructor</Link></li>
+			<li><Link to='/blogs' >Classes</Link></li>
+			<li><Link to='/all-toys'>Dashboard</Link></li>
+			<li><Link to='/all-toys'>Login</Link></li>
+			<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
+				<div className="w-10 rounded-full" >
+					<img src='' />
+				</div>
+			</label>
+		</div >
+
 		{/* {
 			user?.email ? <>
 				<li><Link to='/my-toys'>My Toys</Link></li>
@@ -54,8 +58,6 @@ const Navbar = () => {
 						{navOptions}
 					</ul>
 				</div>
-
-
 			</div>
 		</>
 
