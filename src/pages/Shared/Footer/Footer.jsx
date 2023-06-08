@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaTelegramPlane } from 'react-icons/fa';
-import logo from '../../../assets/logo/png-clipart-musical-ensemble-music-school-art-week-end-logo-computer-wallpaper.png'
+import logo from '../../../assets/logo/music_logo.png'
 const Footer = () => {
 	return (
 		<div className="w-full">
@@ -17,15 +17,12 @@ const Footer = () => {
 
 						
 					</div>
-					{/* <span className="footer-title">About Us</span>
-					<p>Discover a world of magic and nostalgia with Disney Dreamland Dolls. <br />Explore an artistically created selection of Disney dolls that bring cherished <br /> characters to life. From iconic princesses to legendary heroes, embark on a <br /> fantastic adventure and make eternal memories with these lovely companions.</p> */}
-
 
 				</div>
 				<div>
 					<span className="footer-title text-xl">Address & Contact</span>
 					<p className="link link-hover">Banani-6, Dhaka, Bangladesh</p>
-					<p className="link link-hover">Phone: (+880) 1234-56789</p>
+					<p className="link link-hover">Phone: (+880) 987654321</p>
 					<p className="link link-hover">Email: mucic.camp@gmail.com  </p>
 
 				</div>
