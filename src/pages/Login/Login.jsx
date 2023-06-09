@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from '../../assets/images/undraw_Join_re_w1lh.png'
 import { useForm } from "react-hook-form";
@@ -8,6 +7,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import GoogleLogin from "../../Components/SocialLogin/GoogleLogin";
+import PageTitle from "../../Components/PageTitle/PageTitle";
 
 
 const Login = () => {
@@ -41,14 +41,10 @@ const Login = () => {
 				navigate(from, { replace: true });
 			})
 	}
-	// const handleLogin = event => {
-	// 	event.preventDefault()
-	// }
+
 	return (
 		<>
-			<Helmet>
-				<title>Music Camp | Login </title>
-			</Helmet>
+			<PageTitle pTitle={'Login'}></PageTitle>
 			<div className="hero min-h-screen bg-base-200">
 				<div className="hero-content flex-col md:flex-row">
 					<div className="text-center md:w-1/2 lg:text-left">

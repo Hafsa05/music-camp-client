@@ -1,14 +1,12 @@
-import { Helmet } from "react-helmet";
 import useInstructor from "../../hooks/useInstructor/useInstructor";
 import CommonButton from "../../Components/CommonButton/CommonButton";
+import PageTitle from "../../Components/PageTitle/PageTitle";
 
 const AllInstructors = () => {
 	const [instructors] = useInstructor();
 	return (
 		<div className="w-full">
-			<Helmet>
-				<title>Music Camp | Our Instructors</title>
-			</Helmet>
+			<PageTitle pTitle={'Our Instructors'}></PageTitle>
 			<h3 className="text-3xl font-semibold my-4"> Total instructors: {instructors.length}</h3>
 			<div className="overflow-x-auto">
 				<div className="overflow-x-auto">

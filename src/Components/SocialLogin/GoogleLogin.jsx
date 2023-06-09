@@ -34,7 +34,7 @@ const GoogleLogin = () => {
 						Swal.fire({
 							position: 'top-end',
 							icon: 'success',
-							title: 'User Created Successfully',
+							title: 'Login Successfully',
 							showConfirmButton: false,
 							timer: 1500
 						});

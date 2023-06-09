@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import GoogleLogin from "../../Components/SocialLogin/GoogleLogin";
+import PageTitle from "../../Components/PageTitle/PageTitle";
 const SignUp = () => {
 
 	const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -59,9 +60,7 @@ const SignUp = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Music Camp | Sign Up </title>
-			</Helmet>
+			<PageTitle pTitle={'Sign Up'}></PageTitle>
 
 			<div className="hero min-h-screen bg-base-200">
 				<div className="hero-content flex-col md:flex-row">
