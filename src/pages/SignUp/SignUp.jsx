@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import signUpImg from '../../assets/images/undraw_Certificate_re_yadi.png'
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -11,6 +11,9 @@ const SignUp = () => {
 	const { register, handleSubmit, reset, formState: { errors } } = useForm();
 	const { createUser, updateUserProfile } = useContext(AuthContext);
 	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location.state?.from.pathname || '/';
 
 	const onSubmit = data => {
 		console.log(data);
@@ -18,11 +21,11 @@ const SignUp = () => {
 			.then(result => {
 				const loggedUser = result.user;
 				console.log(loggedUser);
-				// navigate(from, { replace: true });
+				navigate(from, { replace: true });
 
 				updateUserProfile(data.name, data.photoURL)
 					.then(() => {
-						const saveUser = { name: data.name, email: data.email, image: data.photoURL }
+						const saveUser = { name: data.name, email: data.email }
 						fetch('http://localhost:5000/users', {
 							method: 'POST',
 							headers: {
