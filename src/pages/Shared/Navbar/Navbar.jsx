@@ -14,10 +14,9 @@ const Navbar = () => {
 
 	const navOptions = <>
 
-		{/* <div className="font-semibold text-xl flex"> */}
 		<li><Link to='/' className="font-semibold text-xl flex">Home</Link></li>
 		<li><Link to='/classes' className="font-semibold text-xl flex">Classes</Link></li>
-		<li><Link to='/' className="font-semibold text-xl flex">Instructors</Link></li>
+		<li><Link to='/instructors' className="font-semibold text-xl flex">Instructors</Link></li>
 
 		{/* <li><Link to='/login' className="font-semibold text-xl flex">Login</Link></li>
 		<li><button onClick={handleLogOut}>Logout</button></li>
@@ -26,14 +25,12 @@ const Navbar = () => {
 				<img src='{user?.photoURL}' />
 			</div>
 		</label> */}
-		{/* </div> */}
 
 		{
 			user?.email ? <>
-				<li><Link to='/all-toys' className="font-semibold text-xl flex">Dashboard</Link></li>
-
+				<li><Link to='/dashboard' className="font-semibold text-xl flex">Dashboard</Link></li>
 				<li><button className="font-semibold text-xl flex" onClick={handleLogOut}>Logout</button></li>
-				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={ user.displayName || user.email}>
+				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={user.displayName || user.email}>
 					<div className="w-10 rounded-full" >
 						<img src={user?.photoURL} />
 					</div>
@@ -46,8 +43,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className="navbar fixed h-24 z-10 bg-opacity-90 bg-sky-200 w-full">
-
+			<div className="navbar h-24 bg-opacity-90 bg-sky-200 w-full">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<label tabIndex={0} className="btn btn-ghost lg:hidden">
