@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
-	
+
 	const handleLogOut = () => {
 		logOut()
 			.then(() => { })
@@ -16,9 +16,9 @@ const Navbar = () => {
 
 		{/* <div className="font-semibold text-xl flex"> */}
 		<li><Link to='/' className="font-semibold text-xl flex">Home</Link></li>
-		<li><Link to='/' className="font-semibold text-xl flex">Instructor</Link></li>
 		<li><Link to='/blogs' className="font-semibold text-xl flex">Classes</Link></li>
-		
+		<li><Link to='/' className="font-semibold text-xl flex">Instructors</Link></li>
+
 		{/* <li><Link to='/login' className="font-semibold text-xl flex">Login</Link></li>
 		<li><button onClick={handleLogOut}>Logout</button></li>
 		<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
@@ -31,9 +31,9 @@ const Navbar = () => {
 		{
 			user?.email ? <>
 				<li><Link to='/all-toys' className="font-semibold text-xl flex">Dashboard</Link></li>
-				
+
 				<li><button className="font-semibold text-xl flex" onClick={handleLogOut}>Logout</button></li>
-				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={user.displayName}>
+				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={ user.displayName || user.email}>
 					<div className="w-10 rounded-full" >
 						<img src={user?.photoURL} />
 					</div>

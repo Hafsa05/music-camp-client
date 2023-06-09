@@ -1,8 +1,8 @@
 [
 	{
 		"_id": 1,
-		"name": "Piano",
-		"image": "https://ibb.co/z2RDrhk",
+		"name": "Piano Class",
+		"image": "https://i.ibb.co/vdPRHxt/piano.jpg",
 		"instructor": "John Smith",
 		"courseFee": 150,
 		"totalSeat": 15,
@@ -10,8 +10,8 @@
 	},
 	{
 		"_id": 2,
-		"name": "Guitar",
-		"image": "https://ibb.co/NnfRR6q",
+		"name": "Guitar Class",
+		"image": "https://i.ibb.co/DgmddDF/gutar.jpg",
 		"instructor": "Sarah Johnson",
 		"courseFee": 120,
 		"totalSeat": 12,
@@ -19,8 +19,8 @@
 	},
 	{
 		"_id": 3,
-		"name": "Violin",
-		"image": "https://ibb.co/1rLYDL1",
+		"name": "Violin Class",
+		"image": "https://i.ibb.co/m9GrLGk/Adult-violin-mh.jpg",
 		"instructor": "Michael Brown",
 		"courseFee": 180,
 		"totalSeat": 10,
@@ -28,8 +28,8 @@
 	},
 	{
 		"_id": 4,
-		"name": "Drums",
-		"image": "https://ibb.co/XWSv3bT",
+		"name": "Drums Class",
+		"image": "https://i.ibb.co/qDkPWdw/drums.jpg",
 		"instructor": "Jessica Lee",
 		"courseFee": 100,
 		"totalSeat": 10,
@@ -37,8 +37,8 @@
 	},
 	{
 		"_id": 5,
-		"name": "Flute",
-		"image": "https://ibb.co/NpmB1QJ",
+		"name": "Flute Class",
+		"image": "https://i.ibb.co/nfnJ3ZY/photo-4.jpg",
 		"instructor": "David Wilson",
 		"courseFee": 90,
 		"totalSeat": 8,
@@ -46,26 +46,27 @@
 	},
 	{
 		"_id": 6,
-		"name": "Tabla",
-		"image": "https://ibb.co/PgLdCmB",
-		"instructor": "Ravi Shankar",
-		"courseFee": 200,
-		"totalSeat": 12,
-		"availableSeat": 8
-	},
-	{
-		"_id": 7,
-		"name": "Sitar",
-		"image": "https://ibb.co/KWj3X9H",
+		"name": "Sitar Class",
+		"image": "https://i.ibb.co/1TfwL9x/sitar.jpg",
 		"instructor": "Ustad Vilayat Khan",
 		"courseFee": 250,
 		"totalSeat": 10,
 		"availableSeat": 5
 	},
 	{
+		"_id": 7,
+		"name": "Tabla Class",
+		"image": "https://i.ibb.co/9WD7Y8R/tabla.jpg",
+		"instructor": "Ravi Shankar",
+		"courseFee": 200,
+		"totalSeat": 12,
+		"availableSeat": 8
+	},
+	
+	{
 		"_id": 8,
-		"name": "Sarod",
-		"image": "https://ibb.co/52zBBMn",
+		"name": "Sarod Class",
+		"image": "https://i.ibb.co/3k8BBrM/sarod.jpg",
 		"instructor": "Ali Akbar Khan",
 		"courseFee": 220,
 		"totalSeat": 8,
@@ -73,8 +74,8 @@
 	},
 	{
 		"_id": 9,
-		"name": "Harmonium",
-		"image": "https://ibb.co/tYK9Y2p",
+		"name": "Harmonium Class",
+		"image": "https://i.ibb.co/5s4Psjh/harmonium.webp",
 		"instructor": "Pandit Shivkumar Sharma",
 		"courseFee": 150,
 		"totalSeat": 10,
@@ -82,8 +83,8 @@
 	},
 	{
 		"_id": 10,
-		"name": "Ukulele",
-		"image": "https://ibb.co/SsMxmJG",
+		"name": "Ukulele Class",
+		"image": "https://i.ibb.co/NVJ3N7b/ukulele.webp",
 		"instructor": "Lucas Johnson",
 		"courseFee": 90,
 		"totalSeat": 15,

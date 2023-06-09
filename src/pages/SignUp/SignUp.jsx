@@ -19,6 +19,7 @@ const SignUp = () => {
 			.then(result => {
 				const loggedUser = result.user;
 				console.log(loggedUser);
+				navigate(from, { replace: true });
 
 				// 		updateUserProfile(data.name, data.photoURL)
 				// 			.then(() => {

@@ -5,7 +5,7 @@ const ClassesCard = ({ pClass }) => {
 	return (
 		<div>
 			<div className="card w-96 bg-base-100 shadow-xl">
-				<figure className="px-10 pt-10">
+				<figure className="px-2 pt-2">
 					<img src={image} alt="classes image" className="rounded-xl" />
 				</figure>
 				<div className="card-body">
