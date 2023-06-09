@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
-import logInImg from '../../assets/images/undraw_Certificate_re_yadi.png'
+import signUpImg from '../../assets/images/undraw_Certificate_re_yadi.png'
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -64,7 +64,7 @@ const SignUp = () => {
 				<div className="hero-content flex-col md:flex-row">
 					<div className="text-center md:w-1/2 lg:text-left">
 						<h1 className="text-5xl font-bold p-4">Sign Up now!</h1>
-						<img src={logInImg} alt="" className="rounded-xl" />
+						<img src={signUpImg} alt="" className="rounded-xl" />
 					</div>
 
 					<div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">

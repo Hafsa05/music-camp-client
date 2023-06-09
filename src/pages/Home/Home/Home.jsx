@@ -1,3 +1,4 @@
+import PopularClasses from "../../PopularClasses/PopularClasses";
 import Banner from "../Banner/Banner";
 import { Helmet } from 'react-helmet';
 
@@ -8,6 +9,7 @@ const Home = () => {
                 <title>Music Camp</title>
             </Helmet>
 			<Banner></Banner>
+			<PopularClasses></PopularClasses>
 		</div>
 	);
 };

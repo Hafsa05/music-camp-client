@@ -1,0 +1,92 @@
+[
+	{
+		"_id": 1,
+		"name": "Piano",
+		"image": "https://ibb.co/z2RDrhk",
+		"instructor": "John Smith",
+		"courseFee": 150,
+		"totalSeat": 15,
+		"availableSeat": 10
+	},
+	{
+		"_id": 2,
+		"name": "Guitar",
+		"image": "https://ibb.co/NnfRR6q",
+		"instructor": "Sarah Johnson",
+		"courseFee": 120,
+		"totalSeat": 12,
+		"availableSeat": 8
+	},
+	{
+		"_id": 3,
+		"name": "Violin",
+		"image": "https://ibb.co/1rLYDL1",
+		"instructor": "Michael Brown",
+		"courseFee": 180,
+		"totalSeat": 10,
+		"availableSeat": 5
+	},
+	{
+		"_id": 4,
+		"name": "Drums",
+		"image": "https://ibb.co/XWSv3bT",
+		"instructor": "Jessica Lee",
+		"courseFee": 100,
+		"totalSeat": 10,
+		"availableSeat": 3
+	},
+	{
+		"_id": 5,
+		"name": "Flute",
+		"image": "https://ibb.co/NpmB1QJ",
+		"instructor": "David Wilson",
+		"courseFee": 90,
+		"totalSeat": 8,
+		"availableSeat": 6
+	},
+	{
+		"_id": 6,
+		"name": "Tabla",
+		"image": "https://ibb.co/PgLdCmB",
+		"instructor": "Ravi Shankar",
+		"courseFee": 200,
+		"totalSeat": 12,
+		"availableSeat": 8
+	},
+	{
+		"_id": 7,
+		"name": "Sitar",
+		"image": "https://ibb.co/KWj3X9H",
+		"instructor": "Ustad Vilayat Khan",
+		"courseFee": 250,
+		"totalSeat": 10,
+		"availableSeat": 5
+	},
+	{
+		"_id": 8,
+		"name": "Sarod",
+		"image": "https://ibb.co/52zBBMn",
+		"instructor": "Ali Akbar Khan",
+		"courseFee": 220,
+		"totalSeat": 8,
+		"availableSeat": 3
+	},
+	{
+		"_id": 9,
+		"name": "Harmonium",
+		"image": "https://ibb.co/tYK9Y2p",
+		"instructor": "Pandit Shivkumar Sharma",
+		"courseFee": 150,
+		"totalSeat": 10,
+		"availableSeat": 7
+	},
+	{
+		"_id": 10,
+		"name": "Ukulele",
+		"image": "https://ibb.co/SsMxmJG",
+		"instructor": "Lucas Johnson",
+		"courseFee": 90,
+		"totalSeat": 15,
+		"availableSeat": 11
+	}
+]
