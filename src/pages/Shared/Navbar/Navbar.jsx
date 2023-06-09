@@ -16,7 +16,7 @@ const Navbar = () => {
 
 		{/* <div className="font-semibold text-xl flex"> */}
 		<li><Link to='/' className="font-semibold text-xl flex">Home</Link></li>
-		<li><Link to='/blogs' className="font-semibold text-xl flex">Classes</Link></li>
+		<li><Link to='/classes' className="font-semibold text-xl flex">Classes</Link></li>
 		<li><Link to='/' className="font-semibold text-xl flex">Instructors</Link></li>
 
 		{/* <li><Link to='/login' className="font-semibold text-xl flex">Login</Link></li>

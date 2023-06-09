@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ClassesCard from "./ClassesCard";
+import ClassCard from "./ClassCard";
 import SectionHeadings from "../../Components/SectionHeadings/SectionHeadings";
 import useClasses from "../../hooks/useClasses/useClasses";
 
@@ -19,10 +19,10 @@ const PopularClasses = () => {
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
 				{/* <p>Classes: {classes.length}</p> */}
 				{
-					classes.map(pClass => <ClassesCard
+					classes.map(pClass => <ClassCard
 						key={pClass._id}
 						pClass={pClass}
-					></ClassesCard>)
+					></ClassCard>)
 				}
 			</div>
 

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 
-const ClassesCard = ({ pClass }) => {
-	const { _id, name, image, courseFee } = pClass;
+// Todo: make use to show only 6 popular classes here 
+const ClassCard = ({ pClass }) => {
+	const { _id, name, image, instructor, courseFee } = pClass;
 	return (
 		<div>
 			<div className="card w-96 bg-base-100 shadow-xl">
@@ -10,6 +10,7 @@ const ClassesCard = ({ pClass }) => {
 				</figure>
 				<div className="card-body">
 					<h2 className="card-title font-bold text-xl">{name}</h2>
+					<h2 className="card-title ">Instructor: {instructor}</h2>
 					<p className="card-title">Price: ${courseFee}</p>
 					<div className="card-actions place-items-end">
 						{/* <Link to={`/class/${_id}`}>
@@ -23,4 +24,4 @@ const ClassesCard = ({ pClass }) => {
 	);
 };
 
-export default ClassesCard;
+export default ClassCard;
