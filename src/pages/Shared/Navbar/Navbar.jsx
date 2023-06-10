@@ -8,6 +8,7 @@ import useCourseCart from "../../../hooks/useCourseCart/useCourseCart";
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
 	const [courseCart, refetch] = useCourseCart();
+	console.log(courseCart);
 
 	const handleLogOut = () => {
 		logOut()
@@ -20,22 +21,13 @@ const Navbar = () => {
 		<li><Link to='/' className="font-semibold text-xl flex">Home</Link></li>
 		<li><Link to='/classes' className="font-semibold text-xl flex">Classes</Link></li>
 		<li><Link to='/instructors' className="font-semibold text-xl flex">Instructors</Link></li>
-		<li><Link to='/'>
-			<button className="btn"><FaShoppingCart></FaShoppingCart><p>+{courseCart?.length || 0}</p></button>
-		</Link></li>
-
-		{/* Todo : delete all comments*/}
-		{/* <li><Link to='/login' className="font-semibold text-xl flex">Login</Link></li>
-		<li><button onClick={handleLogOut}>Logout</button></li>
-		<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>
-			<div className="w-10 rounded-full" >
-				<img src='{user?.photoURL}' />
-			</div>
-		</label> */}
 
 		{
 			user?.email ? <>
 				<li><Link to='/dashboard' className="font-semibold text-xl flex">Dashboard</Link></li>
+				<li><Link to='/'>
+					<button className="btn btn-outline"><FaShoppingCart></FaShoppingCart><p>+{courseCart?.length || 0}</p></button>
+				</Link></li>
 				<li><button className="font-semibold text-xl flex" onClick={handleLogOut}>Logout</button></li>
 				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={user.displayName || user.email}>
 					<div className="w-10 rounded-full" >
