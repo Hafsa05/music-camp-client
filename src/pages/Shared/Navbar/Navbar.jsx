@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/music_logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaShoppingCart } from 'react-icons/fa';
+import useCourseCart from "../../../hooks/useCourseCart/useCourseCart";
 
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
+	const [courseCart, refetch] = useCourseCart();
 
 	const handleLogOut = () => {
 		logOut()
@@ -17,7 +20,11 @@ const Navbar = () => {
 		<li><Link to='/' className="font-semibold text-xl flex">Home</Link></li>
 		<li><Link to='/classes' className="font-semibold text-xl flex">Classes</Link></li>
 		<li><Link to='/instructors' className="font-semibold text-xl flex">Instructors</Link></li>
+		<li><Link to='/'>
+			<button className="btn"><FaShoppingCart></FaShoppingCart><p>+{courseCart?.length || 0}</p></button>
+		</Link></li>
 
+		{/* Todo : delete all comments*/}
 		{/* <li><Link to='/login' className="font-semibold text-xl flex">Login</Link></li>
 		<li><button onClick={handleLogOut}>Logout</button></li>
 		<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip=''>

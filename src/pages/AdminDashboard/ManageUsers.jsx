@@ -8,8 +8,34 @@ const ManageUsers = () => {
 	})
 	return (
 		<>
-		<PageTitle pTitle={"Dashboard - Manage Users"}></PageTitle>
-			{users.length}
+			<PageTitle pTitle={"Dashboard - Manage Users"}></PageTitle>
+			<p>Total reg. user: {users.length}</p>
+			<div className="overflow-x-auto w-full">
+				<table className="table ">
+					{/* head */}
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Roll</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							users.map((user, index) => <tr key={user._id} className="hover">
+								<th>{index + 1}</th>
+								<td>{user?.name}</td>
+								<td>{user?.email}</td>
+								<td>Blue</td>
+							</tr>
+							)
+						}
+
+					</tbody>
+				</table>
+			</div>
 		</>
 	);
 };

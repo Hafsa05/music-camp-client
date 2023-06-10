@@ -11,6 +11,7 @@ import Dashboard from "../LayOut/Dashboard";
 import AdminHome from "../pages/AdminDashboard/AdminHome";
 import ManageUsers from "../pages/AdminDashboard/ManageUsers";
 import ManageClasses from "../pages/AdminDashboard/ManageClasses";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -41,19 +42,19 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: 'dashboard',
-		element: <Dashboard></Dashboard>,
-		children:[
+		element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+		children: [
 			{
-				path:'adminhome',
-				element:<AdminHome></AdminHome>
+				path: 'adminhome',
+				element: <AdminHome></AdminHome>
 			},
 			{
-				path:'manageusers',
-				element:<ManageUsers></ManageUsers>
+				path: 'manageusers',
+				element: <ManageUsers></ManageUsers>
 			},
 			{
-				path:'manageclasses',
-				element:<ManageClasses></ManageClasses>
+				path: 'manageclasses',
+				element: <ManageClasses></ManageClasses>
 			}
 		]
 	}

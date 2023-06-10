@@ -38,7 +38,7 @@ const Dashboard = () => {
 								<div className="m-2">
 									<img src={logo} alt="page logo" className='rounded-full w-20 mr-3' />
 								</div>
-								<div>
+								<div className="text-sky-500">
 									<h1 className="text-2xl font-bold"> Music Camp</h1>
 									<p>Enjoy the rhythm of life with music!</p>
 								</div>
@@ -54,8 +54,8 @@ const Dashboard = () => {
 								</div>
 
 							</label>
-							<h2 className="font-semibold text-xl">Admin: {user.displayName}</h2>
-							<h2 className="font-semibold text-xl">Email: {user.email}</h2>
+							<h2 className="font-semibold text-xl">Admin: {user?.displayName}</h2>
+							<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
 						</div>
 
 						{isAdmin ? <>
