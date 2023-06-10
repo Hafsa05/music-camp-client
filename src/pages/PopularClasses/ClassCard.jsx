@@ -9,13 +9,10 @@ const ClassCard = ({ pClass }) => {
 					<img src={image} alt="classes image" className="rounded-xl" />
 				</figure>
 				<div className="card-body">
-					<h2 className="card-title font-bold text-xl">{name}</h2>
+					<h2 className="card-title font-bold text-xl text-purple-600">{name}</h2>
 					<h2 className="card-title ">Instructor: {instructor}</h2>
-					<p className="card-title">Price: ${courseFee}</p>
 					<div className="card-actions place-items-end">
-						{/* <Link to={`/class/${_id}`}>
-							<button className="btn btn-primary">Book Now</button>
-						</Link> */}
+
 					</div>
 				</div>
 			</div>

@@ -19,7 +19,6 @@ const AllClasses = () => {
 					></AllClassesCart>)
 				}
 			</div>
-
 		</>
 	);
 };

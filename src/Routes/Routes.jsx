@@ -12,6 +12,7 @@ import AdminHome from "../pages/AdminDashboard/AdminHome";
 import ManageUsers from "../pages/AdminDashboard/ManageUsers";
 import ManageClasses from "../pages/AdminDashboard/ManageClasses";
 import PrivateRoute from "./PrivateRoute";
+import SelectedClasses from "../pages/StudentDshaboard/SelectedClasses";
 
 export const router = createBrowserRouter([
 	{
@@ -45,16 +46,20 @@ export const router = createBrowserRouter([
 		element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
 		children: [
 			{
-				path: 'adminhome',
+				path: 'admin-home',
 				element: <AdminHome></AdminHome>
 			},
 			{
-				path: 'manageusers',
+				path: 'manage-users',
 				element: <ManageUsers></ManageUsers>
 			},
 			{
-				path: 'manageclasses',
+				path: 'manage-classes',
 				element: <ManageClasses></ManageClasses>
+			},
+			{
+				path: 'selected-classes',
+				element: <SelectedClasses></SelectedClasses>
 			}
 		]
 	}

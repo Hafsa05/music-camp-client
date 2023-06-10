@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Helmet } from "react-helmet";
-import { FaChalkboardTeacher, FaHome, FaSchool, FaUsers, FaUser } from "react-icons/fa";
+import { FaBook, FaBookmark, FaChalkboardTeacher, FaHome, FaSchool, FaUsers } from "react-icons/fa";
+import { BsBookmarkCheckFill, BsFillJournalBookmarkFill } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../pages/providers/AuthProvider";
@@ -17,11 +17,11 @@ const Dashboard = () => {
 	}
 
 	// Todo => load data from the server to have dynamic isAdmin based on Data
-	const isAdmin = true;
+	const isAdmin = false;
 	return (
 		<>
 			<PageTitle pTitle={'Dashboard'}></PageTitle>
-			<div className="drawer lg:drawer-open bg-sky-100">
+			<div className="drawer lg:drawer-open bg-sky-50">
 				<input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 				<div className="drawer-content flex flex-col items-center justify-center">
 					<Outlet></Outlet>
@@ -59,11 +59,14 @@ const Dashboard = () => {
 						</div>
 
 						{isAdmin ? <>
-							<li><NavLink to='/dashboard/adminhome'><FaHome></FaHome> Admin Home</NavLink></li>
-							<li><NavLink to='/dashboard/manageclasses'><FaSchool></FaSchool> Manage Classes</NavLink></li>
-							<li><NavLink to='/dashboard/manageusers'><FaUsers></FaUsers> Manage Users</NavLink></li>
-						</> : <>
+							<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
+							<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
+							<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
 
+						</> : <>
+						
+							<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Selected Classes</NavLink></li>
+							<li><NavLink to='/dashboard/manage-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
 						</>}
 
 						<div className="divider"></div>

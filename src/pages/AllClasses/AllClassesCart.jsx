@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import CommonButton from "../../Components/CommonButton/CommonButton";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -10,7 +9,7 @@ const AllClassesCart = ({ pClass }) => {
 
 	const { user } = useContext(AuthContext);
 
-	const[, refetch]= useCourseCart();
+	const [, refetch] = useCourseCart();
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -19,7 +18,7 @@ const AllClassesCart = ({ pClass }) => {
 		console.log(pClass);
 		if (user && user.email) {
 			const courseSeat = { courseId: _id, name, instructor, image, courseFee, email: user.email };
-			fetch('http://localhost:5000/carts', {
+			fetch('http://localhost:5000/course-cart', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json'
@@ -31,7 +30,7 @@ const AllClassesCart = ({ pClass }) => {
 					// console.log('before if', data);
 					if (data.insertedId) {
 						// console.log('after if', data);
-						refetch(); 
+						refetch();
 						Swal.fire({
 							position: 'top-end',
 							icon: 'success',
@@ -65,15 +64,13 @@ const AllClassesCart = ({ pClass }) => {
 					<img src={image} alt="classes image" className="rounded-xl" />
 				</figure>
 				<div className="card-body">
-					<h2 className="card-title font-bold text-xl">{name}</h2>
-					<h2 className="card-title ">Instructor: {instructor}</h2>
-					<h2 className="card-title ">Total Seats: {totalSeat}</h2>
-					<h2 className="card-title ">Available Seats: {availableSeat}</h2>
+					<h2 className="card-title font-bold text-xl text-purple-600">{name}</h2>
+					<h2 className="card-title">Instructor: {instructor}</h2>
+					<h2 className="card-title">Total Seats: {totalSeat}</h2>
+					<h2 className="card-title">Available Seats: {availableSeat}</h2>
 					<p className="card-title">Price: ${courseFee}</p>
 					<div className="card-actions">
-						{/* <Link to={`/class/${_id}`}> */}
 						<button onClick={() => handleAddSeat(pClass)} className="btn btn-outline btn-info border-b-4 border-r-4">Add to Cart</button>
-						{/* </Link> */}
 					</div>
 				</div>
 			</div>
