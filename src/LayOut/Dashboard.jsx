@@ -16,8 +16,10 @@ const Dashboard = () => {
 			.catch(error => console.log(error));
 	}
 
-	// Todo => load data from the server to have dynamic isAdmin based on Data
-	const isAdmin = false;
+	// Todo => load data from the server according to user roll
+	const isAdmin = true;
+	const isStudent = false;
+	const isInstructor = false;
 	return (
 		<>
 			<PageTitle pTitle={'Dashboard'}></PageTitle>
@@ -58,25 +60,35 @@ const Dashboard = () => {
 							<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
 						</div>
 
-						{isAdmin ? <>
+						{isAdmin && <>
 							<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
 							<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
 							<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
 
-						</> : <>
-						
-							<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Selected Classes</NavLink></li>
-							<li><NavLink to='/dashboard/manage-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
 						</>}
+						{
+							isStudent && <>
+								<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Selected Classes</NavLink></li>
+								<li><NavLink to='/dashboard/enrolled-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
+							</>
+						}
+						{
+							isInstructor && <>
+								<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Add A Classes</NavLink></li>
+								<li><NavLink to='/dashboard/enrolled-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
+							</>
+						}
 
-						<div className="divider"></div>
-						<li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-						<li><NavLink to="/classes"><FaSchool></FaSchool> Classes</NavLink></li>
-						<li><NavLink to="/instructors"><FaChalkboardTeacher></FaChalkboardTeacher> Instructors</NavLink></li>
-						<li><button onClick={handleLogOut}><FiLogOut></FiLogOut> Logout</button></li>
-					</ul>
-				</div>
-			</div >
+
+
+					<div className="divider"></div>
+					<li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
+					<li><NavLink to="/classes"><FaSchool></FaSchool> Classes</NavLink></li>
+					<li><NavLink to="/instructors"><FaChalkboardTeacher></FaChalkboardTeacher> Instructors</NavLink></li>
+					<li><button onClick={handleLogOut}><FiLogOut></FiLogOut> Logout</button></li>
+				</ul>
+			</div>
+		</div >
 		</>
 
 	);

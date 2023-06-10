@@ -12,7 +12,8 @@ import AdminHome from "../pages/AdminDashboard/AdminHome";
 import ManageUsers from "../pages/AdminDashboard/ManageUsers";
 import ManageClasses from "../pages/AdminDashboard/ManageClasses";
 import PrivateRoute from "./PrivateRoute";
-import SelectedClasses from "../pages/StudentDshaboard/SelectedClasses";
+import SelectedClasses from "../pages/StudentDashboard/SelectedClasses";
+import EnrolledClasses from "../pages/StudentDashboard/EnrolledClasses";
 
 export const router = createBrowserRouter([
 	{
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'selected-classes',
 				element: <SelectedClasses></SelectedClasses>
+			},
+			{
+				path: 'enrolled-classes',
+				element: <EnrolledClasses></EnrolledClasses>
 			}
 		]
 	}
