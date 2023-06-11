@@ -84,7 +84,7 @@ const Login = () => {
 							</div>
 
 							<div className="form-control mt-6">
-								<input className="btn btn-primary bg-sky-500" type="submit" value='Sign Up' />
+								<input className="btn btn-primary bg-sky-500" type="submit" value='Login' />
 							</div>
 						</form>
 						<GoogleLogin></GoogleLogin>

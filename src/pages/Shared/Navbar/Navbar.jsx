@@ -8,7 +8,7 @@ import useCourseCart from "../../../hooks/useCourseCart/useCourseCart";
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
 	const [courseCart, refetch] = useCourseCart();
-	console.log(courseCart);
+	// console.log(courseCart);
 
 	const handleLogOut = () => {
 		logOut()

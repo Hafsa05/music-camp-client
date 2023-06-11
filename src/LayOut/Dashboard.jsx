@@ -1,25 +1,29 @@
 import { useContext } from "react";
-import { FaBook, FaBookmark, FaChalkboardTeacher, FaHome, FaSchool, FaUsers } from "react-icons/fa";
+import { FaBook, FaBookmark, FaChalkboardTeacher, FaHistory, FaHome, FaSchool, FaUsers, FaWallet } from "react-icons/fa";
 import { BsBookmarkCheckFill, BsFillJournalBookmarkFill } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../pages/providers/AuthProvider";
 import logo from '../assets/logo/music_logo.png'
 import PageTitle from "../Components/PageTitle/PageTitle";
 
 const Dashboard = () => {
 	const { user, logOut } = useContext(AuthContext);
+	const navigate = useNavigate()
 
 	const handleLogOut = () => {
 		logOut()
-			.then(() => { })
+			.then(() => { 
+				navigate('/');
+			})
 			.catch(error => console.log(error));
 	}
 
 	// Todo => load data from the server according to user roll
-	const isAdmin = true;
-	const isStudent = false;
+	const isAdmin = false;
+	const isStudent = true;
 	const isInstructor = false;
+
 	return (
 		<>
 			<PageTitle pTitle={'Dashboard'}></PageTitle>
@@ -60,16 +64,19 @@ const Dashboard = () => {
 							<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
 						</div>
 
-						{isAdmin && <>
-							<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
-							<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
-							<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
+						{
+							isAdmin && <>
+								<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
+								<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
+								<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
 
-						</>}
+							</>}
 						{
 							isStudent && <>
 								<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Selected Classes</NavLink></li>
 								<li><NavLink to='/dashboard/enrolled-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
+								<li><NavLink to='/dashboard/payment'><FaWallet></FaWallet> Payment</NavLink></li>
+								<li><NavLink to='/dashboard/enrolled-classes'><FaHistory></FaHistory> Payment History</NavLink></li>
 							</>
 						}
 						{
@@ -81,14 +88,14 @@ const Dashboard = () => {
 
 
 
-					<div className="divider"></div>
-					<li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-					<li><NavLink to="/classes"><FaSchool></FaSchool> Classes</NavLink></li>
-					<li><NavLink to="/instructors"><FaChalkboardTeacher></FaChalkboardTeacher> Instructors</NavLink></li>
-					<li><button onClick={handleLogOut}><FiLogOut></FiLogOut> Logout</button></li>
-				</ul>
-			</div>
-		</div >
+						<div className="divider"></div>
+						<li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
+						<li><NavLink to="/classes"><FaSchool></FaSchool> Classes</NavLink></li>
+						<li><NavLink to="/instructors"><FaChalkboardTeacher></FaChalkboardTeacher> Instructors</NavLink></li>
+						<li><button onClick={handleLogOut}><FiLogOut></FiLogOut> Logout</button></li>
+					</ul>
+				</div>
+			</div >
 		</>
 
 	);

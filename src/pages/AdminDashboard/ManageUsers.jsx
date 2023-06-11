@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import PageTitle from "../../Components/PageTitle/PageTitle";
-import { FaTrashAlt, FaUserEdit } from "react-icons/fa";
+import { FaTrashAlt, FaUserCheck, FaUserCircle, FaUserEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const ManageUsers = () => {
@@ -9,6 +9,9 @@ const ManageUsers = () => {
 		return res.json()
 	})
 
+	const handleStudent = use=>{
+
+	}
 	const handleAdmin = user => {
 		fetch(`http://localhost:5000/users/admin/${user._id}`, {
 			method: 'PATCH'
@@ -21,7 +24,7 @@ const ManageUsers = () => {
 					Swal.fire({
 						position: 'top-end',
 						icon: 'success',
-						title: 'Now you are an admin',
+						title: 'Now you are an Admin!',
 						showConfirmButton: false,
 						timer: 1500
 					})
@@ -42,7 +45,7 @@ const ManageUsers = () => {
 					Swal.fire({
 						position: 'top-end',
 						icon: 'success',
-						title: 'Now you are an instructor',
+						title: 'Now you are an Instructor!',
 						showConfirmButton: false,
 						timer: 1500
 					})
@@ -101,7 +104,11 @@ const ManageUsers = () => {
 								<th>{index + 1}</th>
 								<td>{user?.name}</td>
 								<td>{user?.email}</td>
-								<td>{user.role == 'Admin' ? 'Admin' : <button onClick={() => handleAdmin(user)} className="btn bg-sky-300 text-white mr-10"><FaUserEdit></FaUserEdit> Admin</button>}  {user.role == 'Instructor' ? 'Instructor' : <button onClick={() => handleInstructor(user)} className="btn bg-sky-300 text-white ml-5"><FaUserEdit></FaUserEdit> Instructor</button>}</td>
+								<td>
+									{user.role == 'Student' ? 'Student' : <button onClick={() => handleStudent(user)} className="btn btn-sm bg-sky-300 text-white mr-5"><FaUserCircle></FaUserCircle> Student</button>}
+									{user.role == 'Instructor' ? 'Instructor' : <button onClick={() => handleInstructor(user)} className="btn btn-sm bg-sky-300 text-white ml-5 mr-10"><FaUserEdit></FaUserEdit> Instructor</button>}
+									{user.role == 'Admin' ? 'Admin' : <button onClick={() => handleAdmin(user)} className="btn btn-sm bg-sky-300 text-white ml-5 mr-10"><FaUserCheck></FaUserCheck> Admin</button>}
+								</td>
 								<td><button onClick={() => handleDelete(user)} className="btn text-white bg-red-600"><FaTrashAlt></FaTrashAlt> Delete</button></td>
 							</tr>
 							)

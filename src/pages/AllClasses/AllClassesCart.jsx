@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -7,12 +7,14 @@ import useCourseCart from "../../hooks/useCourseCart/useCourseCart";
 const AllClassesCart = ({ pClass }) => {
 	const { _id, name, image, instructor, availableSeat, totalSeat, courseFee } = pClass;
 
-	const { user } = useContext(AuthContext);
+	const { user, loading } = useContext(AuthContext);
 
 	const [, refetch] = useCourseCart();
 
 	const navigate = useNavigate();
 	const location = useLocation();
+
+	const [book, setBook] = useState(true);
 
 	const handleAddSeat = (pClass) => {
 		console.log(pClass);
@@ -38,6 +40,8 @@ const AllClassesCart = ({ pClass }) => {
 							showConfirmButton: false,
 							timer: 1500
 						})
+						setBook(false);
+						
 					}
 				})
 		}
@@ -70,7 +74,7 @@ const AllClassesCart = ({ pClass }) => {
 					<h2 className="card-title">Available Seats: {availableSeat}</h2>
 					<p className="card-title">Price: ${courseFee}</p>
 					<div className="card-actions">
-						<button onClick={() => handleAddSeat(pClass)} className="btn btn-outline btn-info border-b-4 border-r-4">Add to Cart</button>
+						<button onClick={() => handleAddSeat(pClass)} className="btn btn-outline btn-info border-b-4 border-r-4">Book A Seat</button>
 					</div>
 				</div>
 			</div>
