@@ -84,18 +84,18 @@ const CheckoutForm = ({ courseFee, courseCart }) => {
 			setTransactionId(paymentIntent.id);
 
 			// send payment info to server
-			const payment = {
-				name: user?.displayName,
-				email: user?.email,
-				transactionId: paymentIntent.id,
-				courseFee,
-				date: new Date(),
-				quantity: courseCart?.length,
-				classItems: courseCart.map(course => course._id),
-				courseCartItems: courseCart.map(course => course.courseId),
-				status: 'Payment Done',
-				courseName: courseCart.map(course => course.name)
-			}
+			// const payment = {
+			// 	name: user?.displayName,
+			// 	email: user?.email,
+			// 	transactionId: paymentIntent.id,
+			// 	courseFee,
+			// 	date: new Date(),
+			// 	quantity: courseCart?.length,
+			// 	classItems: courseCart.map(course => course._id),
+			// 	courseCartItems: courseCart.map(course => course.courseId),
+			// 	status: 'Payment Done',
+			// 	courseName: courseCart.map(course => course.name)
+			// }
 			axiosSecure.post('/course-payment', payment)
 				.then(res => {
 					console.log(res.data);
