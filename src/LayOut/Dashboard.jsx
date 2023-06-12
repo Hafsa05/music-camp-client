@@ -13,7 +13,7 @@ const Dashboard = () => {
 
 	const handleLogOut = () => {
 		logOut()
-			.then(() => { 
+			.then(() => {
 				navigate('/');
 			})
 			.catch(error => console.log(error));
@@ -53,38 +53,60 @@ const Dashboard = () => {
 						</Link>
 						<div className="divider"></div>
 
-						<div className="p-5">
-							<label className="btn-circle avatar tooltip tooltip-right ml-5 mb-5">
-								<div className="w-20 rounded-full" >
-									<img src={user?.photoURL} />
-								</div>
-
-							</label>
-							<h2 className="font-semibold text-xl">Admin: {user?.displayName}</h2>
-							<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
-						</div>
-
 						{
 							isAdmin && <>
+								<div className="p-5">
+									<label className="btn-circle avatar tooltip tooltip-right ml-5 mb-5">
+										<div className="w-20 rounded-full" >
+											<img src={user?.photoURL} />
+										</div>
+
+									</label>
+									<h2 className="font-semibold text-xl">Admin: {user?.displayName}</h2>
+									<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
+								</div>
+
 								<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
 								<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
 								<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
 
 							</>}
 						{
+							isInstructor && <>
+								<div className="p-5">
+									<label className="btn-circle avatar tooltip tooltip-right ml-5 mb-5">
+										<div className="w-20 rounded-full" >
+											<img src={user?.photoURL} />
+										</div>
+
+									</label>
+									<h2 className="font-semibold text-xl">Instructor: {user?.displayName}</h2>
+									<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
+								</div>
+								<li><NavLink to='/dashboard/add-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Add a Class</NavLink></li>
+								<li><NavLink to='/dashboard/my-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> My Classes </NavLink></li>
+							</>
+						}
+
+						{
 							isStudent && <>
+								<div className="p-5">
+									<label className="btn-circle avatar tooltip tooltip-right ml-5 mb-5">
+										<div className="w-20 rounded-full" >
+											<img src={user?.photoURL} />
+										</div>
+
+									</label>
+									<h2 className="font-semibold text-xl">Student: {user?.displayName}</h2>
+									<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
+								</div>
 								<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Selected Classes</NavLink></li>
 								<li><NavLink to='/dashboard/enrolled-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
 								<li><NavLink to='/dashboard/payment'><FaWallet></FaWallet> Payment</NavLink></li>
-								<li><NavLink to='/dashboard/enrolled-classes'><FaHistory></FaHistory> Payment History</NavLink></li>
+								<li><NavLink to='/dashboard/payment-history'><FaHistory></FaHistory> Payment History</NavLink></li>
 							</>
 						}
-						{
-							isInstructor && <>
-								<li><NavLink to='/dashboard/selected-classes'><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> Add A Classes</NavLink></li>
-								<li><NavLink to='/dashboard/enrolled-classes'><BsBookmarkCheckFill></BsBookmarkCheckFill> Enrolled Classes </NavLink></li>
-							</>
-						}
+
 
 
 

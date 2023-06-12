@@ -60,7 +60,7 @@ const Footer = () => {
 			</footer>
 			<footer className="footer px-10 py-4 border-t bg-sky-200 text-base-content border-base-300">
 				<div className="md:place-self-center md:justify-self-end flex">
-					<Link to='/terms'><a className="link link-hover">Terms and Conditions </a></Link>
+					<a className="link link-hover">Terms and Conditions </a>
 				</div>
 				<div className="items-center grid-flow-col text-center">
 					©2023 Music Camp. All rights reserved.

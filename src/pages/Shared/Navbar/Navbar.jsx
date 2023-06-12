@@ -25,9 +25,9 @@ const Navbar = () => {
 		{
 			user?.email ? <>
 				<li><Link to='/dashboard' className="font-semibold text-xl flex">Dashboard</Link></li>
-				<li><Link to='/'>
+				{/* <li><Link to='/'>
 					<button className="btn btn-outline"><FaShoppingCart></FaShoppingCart><p>+{courseCart?.length || 0}</p></button>
-				</Link></li>
+				</Link></li> */}
 				<li><button className="font-semibold text-xl flex" onClick={handleLogOut}>Logout</button></li>
 				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={user.displayName || user.email}>
 					<div className="w-10 rounded-full" >

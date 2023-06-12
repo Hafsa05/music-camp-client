@@ -9,8 +9,25 @@ const ManageUsers = () => {
 		return res.json()
 	})
 
-	const handleStudent = use=>{
+	const handleStudent = user => {
+		fetch(`http://localhost:5000/users/student/${user._id}`, {
+			method: 'PATCH'
+		})
+			.then(res => res.json())
+			.then(data => {
+				console.log(data)
+				if (data.modifiedCount) {
+					refetch()
+					Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: 'Now you are a Student!',
+						showConfirmButton: false,
+						timer: 1500
+					})
 
+				}
+			})
 	}
 	const handleAdmin = user => {
 		fetch(`http://localhost:5000/users/admin/${user._id}`, {
@@ -86,8 +103,8 @@ const ManageUsers = () => {
 	return (
 		<>
 			<PageTitle pTitle={"Dashboard - Manage Users"}></PageTitle>
-			<p>Total reg. user: {users.length}</p>
-			<div className="overflow-x-auto w-full">
+			<p className="text-3xl m-5">Total reg. user: {users.length}</p>
+			<div className="overflow-x-auto w-full mt-10">
 				<table className="table font-semibold ">
 					<thead className="font-bold text-xl">
 						<tr>

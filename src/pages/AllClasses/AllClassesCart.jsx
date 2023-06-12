@@ -71,7 +71,7 @@ const AllClassesCart = ({ pClass }) => {
 					<h2 className="card-title font-bold text-xl text-purple-600">{name}</h2>
 					<h2 className="card-title">Instructor: {instructor}</h2>
 					<h2 className="card-title">Total Seats: {totalSeat}</h2>
-					<h2 className="card-title">Available Seats: {availableSeat}</h2>
+					{/* <h2 className="card-title">Available Seats: {availableSeat}</h2> */}
 					<p className="card-title">Price: ${courseFee}</p>
 					<div className="card-actions">
 						<button onClick={() => handleAddSeat(pClass)} className="btn btn-outline btn-info border-b-4 border-r-4">Book A Seat</button>
