@@ -9,7 +9,7 @@ import GoogleLogin from "../../Components/SocialLogin/GoogleLogin";
 import PageTitle from "../../Components/PageTitle/PageTitle";
 const SignUp = () => {
 
-	const { register, handleSubmit, reset, formState: { errors } } = useForm();
+	const { register, handleSubmit, reset, formState: { errors }, watch } = useForm();
 	const { createUser, updateUserProfile } = useContext(AuthContext);
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -57,6 +57,8 @@ const SignUp = () => {
 			})
 	};
 
+	// const password = watch('password');
+	// const confirmPassword = watch('confirmPassword');
 
 	return (
 		<>

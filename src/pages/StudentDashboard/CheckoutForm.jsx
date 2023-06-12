@@ -96,6 +96,7 @@ const CheckoutForm = ({ courseFee, courseCart }) => {
 				status: 'Payment Done',
 				courseName: courseCart.map(course => course.name)
 			}
+			console.log(payment);
 			axiosSecure.post('/course-payment', payment)
 				.then(res => {
 					console.log(res.data);
@@ -135,8 +136,8 @@ const CheckoutForm = ({ courseFee, courseCart }) => {
 					Pay
 				</button>
 			</form>
-			{cardError && <p className="text-red-600">{cardError}</p>}
-			{transactionId && <p className="text-green-600">Your course payment is completed with transactionId: {transactionId}</p>}
+			{cardError && <p className="text-red-600 text-xl">{cardError}</p>}
+			{transactionId && <p className="text-green-600 text-xl">Your course payment is completed with transactionId: {transactionId}</p>}
 
 		</>
 	);

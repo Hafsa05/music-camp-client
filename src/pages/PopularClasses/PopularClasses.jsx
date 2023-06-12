@@ -4,14 +4,7 @@ import SectionHeadings from "../../Components/SectionHeadings/SectionHeadings";
 import useClasses from "../../hooks/useClasses/useClasses";
 
 const PopularClasses = () => {
-	// const [classes, setClasses] = useState([]);
-
-	// useEffect(() => {
-	// 	fetch('http://localhost:5000/classes')
-	// 		.then(res => res.json())
-	// 		.then(data => setClasses(data));
-	// }, [])
-
+	
 	const [classes] = useClasses();
 	return (
 		<>

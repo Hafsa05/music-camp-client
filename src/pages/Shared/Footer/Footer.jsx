@@ -3,7 +3,7 @@ import { FaGoogle, FaTelegramPlane } from 'react-icons/fa';
 import logo from '../../../assets/logo/music_logo.png'
 const Footer = () => {
 	return (
-		<div className="w-full">
+		<div className="w-full mt-5">
 			<footer className="footer p-12 bg-sky-50 w-full">
 				<div>
 					<div className='flex'>

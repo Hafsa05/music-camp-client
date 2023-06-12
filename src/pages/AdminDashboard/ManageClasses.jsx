@@ -4,6 +4,7 @@ import { FaTrashAlt, FaUserEdit } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageClasses = () => {
+	
 	const { data: classes = [], refetch } = useQuery(['classes'], async () => {
 		const res = await fetch('http://localhost:5000/classes')
 		return res.json();
@@ -34,7 +35,7 @@ const ManageClasses = () => {
 		<>
 			<div className='w-full'>
 				<div className="overflow-x-auto w-full">
-					<table className="table font-semibold">
+					<table className="table font-semibold hover">
 						<thead className="font-bold text-xl">
 							<tr>
 								<th></th>
@@ -47,12 +48,13 @@ const ManageClasses = () => {
 						</thead>
 						<tbody>
 							{
-								classes.map((mclass, index) => <tr key={mclass._id}>
+								classes.map((mclass, index) => <tr key={mclass._id} className="hover">
 									<th>{index + 1}</th>
 									<td>{mclass.name}</td>
 									<td>{mclass.instructor}</td>
-									<td>{mclass.courseFee}</td>
+									<td>$ {mclass.courseFee}</td>
 									<td>{mclass.role == 'approved' ? 'approved' : <button onClick={() => handleApproveClass(mclass)} className="btn btn-ghost btn-sm text-white bg-sky-300"><FaUserEdit></FaUserEdit> </button>}</td>
+									{/* <td>{mclass.role == 'approved' ? 'approved' : <button onClick={() => handleD(mclass)} className="btn btn-ghost btn-sm text-white bg-sky-300"><FaUserEdit></FaUserEdit> </button>}</td> */}
 
 
 								</tr>)

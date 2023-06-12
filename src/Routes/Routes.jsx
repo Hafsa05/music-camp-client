@@ -18,11 +18,16 @@ import Payment from "../pages/StudentDashboard/Payment";
 import PaymentHistory from "../pages/StudentDashboard/PaymentHistory";
 import AddClasses from "../pages/InstructorDashboard/AddClasses";
 import MyClasses from "../pages/InstructorDashboard/MyClasses";
+import ErrorPage from '../errorPage/ErrorPage'
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
+import StudentRoute from "./StudentRoute";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: '/',
@@ -53,43 +58,54 @@ export const router = createBrowserRouter([
 			// admin 
 			{
 				path: 'admin-home',
-				element: <AdminHome></AdminHome>
+				element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+				// element: <AdminHome></AdminHome>
 			},
 			{
 				path: 'manage-users',
-				element: <ManageUsers></ManageUsers>
+				element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+				// element: <ManageUsers></ManageUsers>
 			},
 			{
 				path: 'manage-classes',
-				element: <ManageClasses></ManageClasses>
+				element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+				// element: <ManageClasses></ManageClasses>
 			},
+
 			// instructors 
 			{
 				path: 'add-classes',
-				element: <AddClasses></AddClasses>
+				element: <InstructorRoute><AddClasses></AddClasses></InstructorRoute>
+				// element: <AddClasses></AddClasses>
 			},
 			{
 				path: 'my-classes',
-				element: <MyClasses></MyClasses>
+				element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+				// element: <MyClasses></MyClasses>
 			},
+
 			// student 
 			{
 				path: 'selected-classes',
-				element: <SelectedClasses></SelectedClasses>
+				element: <StudentRoute><SelectedClasses></SelectedClasses></StudentRoute>
+				// element: <SelectedClasses></SelectedClasses>
 			},
 			{
 				path: 'enrolled-classes',
-				element: <EnrolledClasses></EnrolledClasses>
+				element: <StudentRoute> <EnrolledClasses></EnrolledClasses></StudentRoute>
+				// element: <EnrolledClasses></EnrolledClasses>
 			},
 			{
 				path: 'payment',
-				element: <Payment></Payment>
+				element: <StudentRoute><Payment></Payment></StudentRoute>
+				// element: <Payment></Payment>
 			},
 			{
 				path: 'payment-history',
-				element: <PaymentHistory></PaymentHistory>
+				element: <StudentRoute><PaymentHistory></PaymentHistory></StudentRoute>
+				// element: <PaymentHistory></PaymentHistory>
 			},
-			
+
 		]
 	}
 ]);

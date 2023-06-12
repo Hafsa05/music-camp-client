@@ -45,7 +45,7 @@ const GoogleLogin = () => {
 	}
 	return (
 		<>
-			<div className="divider">Or user any of these</div>
+			<div className="divider">Or user google</div>
 			<div className="w-full text-center m-4">
 				<button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
 					<FaGoogle></FaGoogle>

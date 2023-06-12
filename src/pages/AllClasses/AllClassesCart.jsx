@@ -18,7 +18,7 @@ const AllClassesCart = ({ pClass }) => {
 
 	const handleAddSeat = (pClass) => {
 		console.log(pClass);
-		if (user && user.email) {
+		if (user && user?.email) {
 			const courseSeat = { courseId: _id, name, instructor, image, courseFee, email: user.email };
 			fetch('http://localhost:5000/course-cart', {
 				method: 'POST',

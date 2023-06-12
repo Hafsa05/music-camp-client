@@ -7,9 +7,13 @@ import { AuthContext } from "../pages/providers/AuthProvider";
 import logo from '../assets/logo/music_logo.png'
 import PageTitle from "../Components/PageTitle/PageTitle";
 
+import useAdmin from "../hooks/useAdmin/useAdmin";
+import useIsInstructor from "../hooks/useIsInstructor/useIsInstructor";
+import useStudent from "../hooks/useStudent/useStudent";
+
 const Dashboard = () => {
 	const { user, logOut } = useContext(AuthContext);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const handleLogOut = () => {
 		logOut()
@@ -20,9 +24,15 @@ const Dashboard = () => {
 	}
 
 	// Todo => load data from the server according to user roll
-	const isAdmin = false;
-	const isStudent = true;
-	const isInstructor = false;
+	// const isAdmin = true;
+	// const isStudent = true;
+	// const isInstructor = false;
+
+	const [isAdmin, isAdminLoading] = useAdmin();
+	const [isInstructor, isInstructorLoading] = useIsInstructor();
+	const [isStudent, isStudentLoading] = useStudent();
+
+	console.log({ isAdmin, isInstructor, isStudent });
 
 	return (
 		<>
@@ -95,7 +105,6 @@ const Dashboard = () => {
 										<div className="w-20 rounded-full" >
 											<img src={user?.photoURL} />
 										</div>
-
 									</label>
 									<h2 className="font-semibold text-xl">Student: {user?.displayName}</h2>
 									<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
@@ -106,9 +115,6 @@ const Dashboard = () => {
 								<li><NavLink to='/dashboard/payment-history'><FaHistory></FaHistory> Payment History</NavLink></li>
 							</>
 						}
-
-
-
 
 						<div className="divider"></div>
 						<li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
