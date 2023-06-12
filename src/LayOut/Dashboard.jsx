@@ -23,7 +23,7 @@ const Dashboard = () => {
 			.catch(error => console.log(error));
 	}
 
-	// Todo => load data from the server according to user roll
+	// Todo => load dashboard according to user role
 	// const isAdmin = true;
 	// const isStudent = true;
 	// const isInstructor = false;
@@ -32,7 +32,7 @@ const Dashboard = () => {
 	const [isInstructor, isInstructorLoading] = useIsInstructor();
 	const [isStudent, isStudentLoading] = useStudent();
 
-	console.log({ isAdmin, isInstructor, isStudent });
+	// console.log({ isAdmin, isInstructor, isStudent });
 
 	return (
 		<>
@@ -76,7 +76,7 @@ const Dashboard = () => {
 									<h2 className="font-semibold text-xl">Email: {user?.email}</h2>
 								</div>
 
-								<li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li>
+								{/* <li><NavLink to='/dashboard/admin-home'><FaHome></FaHome> Admin Home</NavLink></li> */}
 								<li><NavLink to='/dashboard/manage-classes'><FaSchool></FaSchool> Manage Classes</NavLink></li>
 								<li><NavLink to='/dashboard/manage-users'><FaUsers></FaUsers> Manage Users</NavLink></li>
 

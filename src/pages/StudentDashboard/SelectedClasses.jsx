@@ -8,7 +8,7 @@ const SelectedClasses = () => {
 
 	const [courseCart, refetch] = useCourseCart();
 	console.log(courseCart);
-	const totalFee = courseCart.reduce((total, course) => course.courseFee + total, 0);
+	const totalFee = courseCart.reduce((total, course) => parseInt(course.courseFee) + total, 0);
 
 	const handleDelete = course => {
 		Swal.fire({

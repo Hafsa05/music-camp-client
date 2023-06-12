@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { FaTrashAlt, FaUserEdit } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../providers/AuthProvider';
 
@@ -8,7 +7,7 @@ import { AuthContext } from '../providers/AuthProvider';
 const MyClasses = () => {
 	const {user} = useContext(AuthContext);
 	const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-		const res = await fetch(`http://localhost:5000/my-class/${user?.email}`)
+		const res = await fetch(`http://localhost:5000/my-class?${user?.email}`)
 		return res.json();
 	})
 	return (
@@ -23,6 +22,7 @@ const MyClasses = () => {
 								<th>Instructor Name</th>
 								<th>Price</th>
 								<th>Status</th>
+								<th>Follow Up</th>
 
 							</tr>
 						</thead>

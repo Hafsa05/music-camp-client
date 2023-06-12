@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CommonButton from "../../../Components/CommonButton/CommonButton";
 import PageTitle from "../../../Components/PageTitle/PageTitle";
 import PopularClasses from "../../PopularClasses/PopularClasses";
@@ -11,9 +12,9 @@ const Home = () => {
 			<PageTitle pTitle={'Home'}></PageTitle>
 			<Banner></Banner>
 			<PopularClasses></PopularClasses>
-			<PopularInstructors></PopularInstructors>
+			{/* <PopularInstructors></PopularInstructors> */}
 			<Sponsors></Sponsors>
-			<CommonButton text={"Register Now"}></CommonButton>
+			<Link to='/signup'><CommonButton text={"Register Now"}></CommonButton></Link>
 		</div>
 	);
 };

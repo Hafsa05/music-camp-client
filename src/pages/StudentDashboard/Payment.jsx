@@ -7,8 +7,9 @@ import useCourseCart from "../../hooks/useCourseCart/useCourseCart";
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
 	const [courseCart, refetch] = useCourseCart();
-	const totalFee = courseCart.reduce((total, course) => course.courseFee + total, 0);
+	const totalFee = courseCart.reduce((total, course) => parseInt(course.courseFee) + total, 0);
 	const totalCourseFee = parseInt(totalFee);
+	console.log(totalFee);
 	return (
 		<div>
 			<PageTitle pTitle={"Student Payment Gateway"}></PageTitle>
