@@ -4,6 +4,7 @@ import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure/useAxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const CheckoutForm = ({ courseFee, courseCart }) => {
 	const stripe = useStripe();
@@ -89,17 +90,23 @@ const CheckoutForm = ({ courseFee, courseCart }) => {
 				transactionId: paymentIntent.id,
 				courseFee,
 				date: new Date(),
-				quantity: courseCart.length,
+				quantity: courseCart?.length,
 				classItems: courseCart.map(course => course._id),
 				courseCartItems: courseCart.map(course => course.courseId),
-				status: 'service pending',
-				courseName: courseCart.map(courseCart => courseCart.name)
+				status: 'Payment Done',
+				courseName: courseCart.map(course => course.name)
 			}
-			axiosSecure.post('/coursePayment', payment)
+			axiosSecure.post('/course-payment', payment)
 				.then(res => {
 					console.log(res.data);
-					if (res.data.result.insertedId) {
-						// confirmation
+					if (res.data.insertedId) {
+						Swal.fire({
+							position: 'top-end',
+							icon: 'success',
+							title: 'Successfully payment done!',
+							showConfirmButton: false,
+							timer: 1500
+						});
 					}
 				})
 		}
