@@ -135,8 +135,8 @@ const CheckoutForm = ({ courseFee, courseCart }) => {
 					Pay
 				</button>
 			</form>
-			{cardError && <p className="text-red-500">{cardError}</p>}
-			{transactionId && <p className="text-green-500">Your course payment is completed with transactionId: {transactionId}</p>}
+			{cardError && <p className="text-red-600">{cardError}</p>}
+			{transactionId && <p className="text-green-600">Your course payment is completed with transactionId: {transactionId}</p>}
 
 		</>
 	);
