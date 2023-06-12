@@ -6,12 +6,12 @@ import Swal from 'sweetalert2';
 const ManageClasses = () => {
 	
 	const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-		const res = await fetch('http://localhost:5000/classes')
+		const res = await fetch('https://music-camp-server.vercel.app/classes')
 		return res.json();
 	})
 
 	const handleApproveClass = mclass => {
-		fetch(`http://localhost:5000/classes/music-class/${mclass._id}`, {
+		fetch(`https://music-camp-server.vercel.app/classes/music-class/${mclass._id}`, {
 			method: 'PATCH'
 		})
 			.then(res => res.json())

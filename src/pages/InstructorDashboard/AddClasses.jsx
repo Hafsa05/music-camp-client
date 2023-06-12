@@ -10,7 +10,7 @@ const AddClasses = () => {
 	const onSubmit = data => {
 		console.log(data)
 		const classData = data;
-		fetch('http://localhost:5000/classes', {
+		fetch('https://music-camp-server.vercel.app/classes', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',

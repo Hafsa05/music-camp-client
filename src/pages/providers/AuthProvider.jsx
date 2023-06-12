@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
             // console.log('Current-User', currentUser);
             // jwt token checking 
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt-token', { email: currentUser.email })
+                axios.post('https://music-camp-server.vercel.app/jwt-token', { email: currentUser.email })
                     .then(res => {
                         // console.log(res.data.token);
                         localStorage.setItem('access-token', res.data.token);

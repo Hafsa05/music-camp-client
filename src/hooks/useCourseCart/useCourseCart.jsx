@@ -8,7 +8,7 @@ const useCourseCart = () => {
 	const { refetch, data: courseCart = [] } = useQuery({
 		queryKey: ['course-cart', user?.email],
 		queryFn: async () => {
-			const response = await fetch(`http://localhost:5000/course-cart?email=${user?.email}`)
+			const response = await fetch(`https://music-camp-server.vercel.app/course-cart?email=${user?.email}`)
 			return response.json();
 		},
 	})

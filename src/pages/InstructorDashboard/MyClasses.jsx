@@ -7,7 +7,7 @@ import { AuthContext } from '../providers/AuthProvider';
 const MyClasses = () => {
 	const {user} = useContext(AuthContext);
 	const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-		const res = await fetch(`http://localhost:5000/my-class?${user?.email}`)
+		const res = await fetch(`https://music-camp-server.vercel.app/my-class?${user?.email}`)
 		return res.json();
 	})
 	return (

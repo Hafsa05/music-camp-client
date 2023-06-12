@@ -20,7 +20,7 @@ const AllClassesCart = ({ pClass }) => {
 		console.log(pClass);
 		if (user && user?.email) {
 			const courseSeat = { courseId: _id, name, instructor, image, courseFee, email: user.email };
-			fetch('http://localhost:5000/course-cart', {
+			fetch('https://music-camp-server.vercel.app/course-cart', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json'
