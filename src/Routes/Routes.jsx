@@ -18,7 +18,7 @@ import Payment from "../pages/StudentDashboard/Payment";
 import PaymentHistory from "../pages/StudentDashboard/PaymentHistory";
 import AddClasses from "../pages/InstructorDashboard/AddClasses";
 import MyClasses from "../pages/InstructorDashboard/MyClasses";
-// import ErrorPage from '../errorPage/ErrorPage'
+import ErrorPage from '../errorPage/ErrorPage'
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import StudentRoute from "./StudentRoute";
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
-		// errorElement: <ErrorPage></ErrorPage>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: '/',
