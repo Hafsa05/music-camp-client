@@ -1,6 +1,6 @@
 
 # Assignment 12 - Project Title : Music Camp
-Music Camp is a summer camp skill development project. This is my 12th programming hero web developer course's assignment and this is about a music instrument tesching center. People will find different category's music instrument related courses those are taught by the professional of the specific instrument. Besides that here we are providing the best course service for the people with minimum cost. People can enjoy and learn to follow their pasion and profession too. It will help make their monotonous life interestion as well as enjoyable.
+Music Camp is a summer camp skill development project. This is my 12th programming hero web developer course's assignment and this is about a music instrument teaching center. People will find different category's music instrument related courses those are taught by the professional of the specific instrument. Besides that here we are providing the best course service for the people with minimum cost. People can enjoy and learn to follow their passion and profession, too. It will help make their monotonous life interestion as well as enjoyable.
 
 
 
